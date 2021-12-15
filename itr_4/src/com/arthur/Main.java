@@ -28,13 +28,15 @@ public class Main {
                 System.out.println(i++ + " - " +itr.next());
             System.out.println("0 - exit");
             System.out.println("? - help");
-            System.out.println("Enter your move:");
+            System.out.print("Enter your move:");
             Scanner in = new Scanner(System.in);
             String choicepeople = in.next();
             if (Objects.equals(choicepeople, "0")) break;
-            System.out.println(choicepeople);
             if (Objects.equals(choicepeople, "?")) table.GenerationTable();
-
+            System.out.println("Your move:" + ((String) names.get(Integer.parseInt(choicepeople) - 1)));
+            System.out.println(key.ComputerMove);
+            System.out.println("Computer move:" + ((String) names.get(key.ComputerMove)));
+            player.Win(Integer.parseInt(choicepeople) - 1,key.ComputerMove,names.size());
         }
     }
 

@@ -12,7 +12,8 @@ public class KeyGen {
         byte[] values = new byte[32]; // 256 bit
         random.nextBytes(values);
         StringBuilder sb = new StringBuilder();
-        ComputerMove = byteArrayToInt(values);
+        ComputerMove = Math.abs(byteArrayToInt(values) % n);
+        System.out.println(ComputerMove);
         for (byte b : values) {
             sb.append(String.format("%02x", b));
         }
